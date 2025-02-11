@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>차량 단기예약수정</title>
+</head>
+<body>
+<h1> 단기 예약수정</h1>
+
+<form th:action="@{/reservations/update}" th:object="${reservation}" method="post">
+  <label for="reservationSId">예약 ID</label>
+  <input type="text" id="reservationSId" th:field="*{reservationSId}" readonly="readonly" /><br/><br/>
+
+  <label for="carId">차량 ID</label>
+  <input type="text" id="carId" th:field="*{carId}" readonly="readonly" /><br/><br/>
+
+  <label for="reservationSStartDate">대여 시작일</label>
+  <input type="text" id="reservationSStartDate" th:field="*{reservationSStartDate}" /><br/><br/>
+
+  <label for="reservationSEndDate">대여 종료일</label>
+  <input type="text" id="reservationSEndDate" th:field="*{reservationSEndDate}" /><br/><br/>
+
+  <label for="reservationSCreateDate">예약 생성일</label>
+  <input type="text" id="reservationSCreateDate" th:field="*{reservationSCreateDate}" readonly="readonly" /><br/><br/>
+
+  <input type="submit" value="수정하기" />
+</form>
+
+<br>
+<a href="/reservations">목록으로 돌아가기</a>
+</body>
+</html>

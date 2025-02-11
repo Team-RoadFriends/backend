@@ -5,9 +5,7 @@ import com.road_friends.rentalcar.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/reservations")
@@ -25,9 +23,7 @@ public class ReservationController {
     //예약 세부 조회
     @GetMapping("/show/{id}")
     public String showReservationDetails(@PathVariable Long id, Model model){
-        System.out.println("컨트롤ㄹ러에서 아이디 받아오는지 확인11111 " + id);
         ReservationDto reservation = reservationService.getReservationById(id);
-        System.out.println("컨트롤ㄹ러에서 아이디 받아오는지 확인 " + id);
         if(reservation == null) {
             return "redirect:/reservations";
         }
@@ -39,7 +35,18 @@ public class ReservationController {
 
     //예약 추가 처리
 
-    //예약 수정 처리
+    //예약 수정 폼
+    @GetMapping("/edit/{id}")
+    public String showEditForm(@PathVariable Long id, Model model){
+        model.addAttribute("reservation", reservationService.getReservationById(id));
+        return "reservation/sform";
+    }
 
+    //예약 수정 처리
+    @PostMapping("/update")
+    public String updateReservation(@ModelAttribute ReservationDto reservation){
+        reservationService.updateReservation(reservation);
+        return "redirect:/reservations";
+    }
     //예약 취소
 }

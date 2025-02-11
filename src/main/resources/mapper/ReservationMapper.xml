@@ -13,4 +13,11 @@
         SELECT reservation_s_id, car_id, reservation_s_start_date, reservation_s_end_date, reservation_s_create_date
         FROM reservation_s_data WHERE reservation_s_id = #{reservationSId};
     </select>
+
+    <!-- 예약 수정 -->
+    <update id="update" parameterType="com.road_friends.rentalcar.dto.ReservationDto">
+        UPDATE reservation_s_data
+        SET reservation_s_start_date = #{reservationSStartDate}, reservation_s_end_date = #{reservationSEndDate}
+        WHERE reservation_s_id = #{reservationSId};
+    </update>
 </mapper>

@@ -9,4 +9,5 @@ import java.util.List;
 public interface ReservationMapper {
     List<ReservationDto> findAll();
     ReservationDto findById(Long id);
+    void update(ReservationDto reservation);
 }

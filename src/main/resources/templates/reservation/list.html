@@ -20,7 +20,7 @@
         <td th:text="${reservation.reservationSId}"></td>
         <td th:text="${reservation.reservationSCreateDate}"></td>
         <td><a th:href="@{/reservations/show/{id}(id=${reservation.reservationSId})}">세부 조회</a></td>
-<!--        <td><a th:href="@{/cars/edit/{id}(id=${car.carId})}">수정</a></td>-->
+        <td><a th:href="@{/reservations/edit/{id}(id=${reservation.reservationSId})}">수정</a></td>
 <!--        <td><a th:href="@{/cars/delete/{id}(id=${car.carId})}" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a></td>-->
     </tr>
     </tbody>

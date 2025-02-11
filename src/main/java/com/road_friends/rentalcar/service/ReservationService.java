@@ -19,7 +19,10 @@ public class ReservationService {
     }
 
     public ReservationDto getReservationById(Long id){
-        System.out.println("아이디받아옴??????" + id);
         return reservationMapper.findById(id);
+    }
+
+    public void updateReservation(ReservationDto reservation) {
+        reservationMapper.update(reservation);
     }
 }//END service
