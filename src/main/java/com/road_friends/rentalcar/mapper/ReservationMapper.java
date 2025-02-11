@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface ReservationMapper {
     List<ReservationDto> findAll();
+    ReservationDto findById(Long id);
 }

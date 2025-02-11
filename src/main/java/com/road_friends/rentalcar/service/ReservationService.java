@@ -17,4 +17,9 @@ public class ReservationService {
     public List<ReservationDto> getAllReservations() {
         return reservationMapper.findAll();
     }
+
+    public ReservationDto getReservationById(Long id){
+        System.out.println("아이디받아옴??????" + id);
+        return reservationMapper.findById(id);
+    }
 }//END service
