@@ -25,4 +25,8 @@ public class ReservationService {
     public void updateReservation(ReservationDto reservation) {
         reservationMapper.update(reservation);
     }
+
+    public void deleteReservation(Long id){
+        reservationMapper.delete(id);
+    }
 }//END service

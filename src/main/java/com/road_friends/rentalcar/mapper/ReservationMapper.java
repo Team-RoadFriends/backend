@@ -10,4 +10,5 @@ public interface ReservationMapper {
     List<ReservationDto> findAll();
     ReservationDto findById(Long id);
     void update(ReservationDto reservation);
+    void delete(Long id);
 }

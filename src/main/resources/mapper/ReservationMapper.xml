@@ -20,4 +20,10 @@
         SET reservation_s_start_date = #{reservationSStartDate}, reservation_s_end_date = #{reservationSEndDate}
         WHERE reservation_s_id = #{reservationSId};
     </update>
+
+    <!-- 예약 취소 -->
+    <delete id="delete">
+        DELETE FROM reservation_s_data WHERE reservation_s_id = #{reservationSId};
+    </delete>
+
 </mapper>

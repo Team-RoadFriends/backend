@@ -48,5 +48,11 @@ public class ReservationController {
         reservationService.updateReservation(reservation);
         return "redirect:/reservations";
     }
-    //예약 취소
+
+    //예약 취소(삭제)
+    @GetMapping("/delete/{id}")
+    public String deleteResevation(@PathVariable Long id){
+        reservationService.deleteReservation(id);
+        return "redirect:/reservations";
+    }
 }
