@@ -1,6 +1,8 @@
 package com.road_friends.rentalcar.controller;
 
+import com.road_friends.rentalcar.dto.CarDto;
 import com.road_friends.rentalcar.dto.ReservationDto;
+import com.road_friends.rentalcar.service.CarService;
 import com.road_friends.rentalcar.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,14 @@ import org.springframework.web.bind.annotation.*;
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;
+    private CarService carService;
+
+    //차량 목록 조회
+    @GetMapping("/list")
+    public String listCar(Model model){
+        model.addAttribute("cars",reservationService.getAllCars());
+        return "reservation/car_list";
+    }
 
     //예약 목록 조회
     @GetMapping
@@ -32,8 +42,22 @@ public class ReservationController {
     }
 
     //예약 추가 폼
+    @GetMapping("/new/{id}")
+    public String showAddForm(@PathVariable Long id, Model model, ReservationDto reservation){
+        CarDto car = reservationService.getCarById(id);
+        if(car == null){
+            return "redirect:/reservations/car_list";
+        }
+        model.addAttribute("car", car);
+        return "reservation/new";
+    }
 
     //예약 추가 처리
+    @PostMapping
+    public String addReservation(@PathVariable Long id,@ModelAttribute ReservationDto reservation){
+        reservationService.newReservation(id);
+        return "redirect:/reservations";
+    }
 
     //예약 수정 폼
     @GetMapping("/edit/{id}")

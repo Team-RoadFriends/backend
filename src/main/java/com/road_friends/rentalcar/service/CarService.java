@@ -19,6 +19,7 @@ public class CarService {
   }
 
   public CarDto getCarById(Long id) {
+    System.out.println("가져온 id " + id);
     return carMapper.findById(id);
   }
 

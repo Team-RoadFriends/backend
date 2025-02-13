@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>단기예약 추가</title>
+</head>
+<body>
+<h1>예약 차량정보</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>차량 ID</th>
+        <th>제조사</th>
+        <th>카테고리</th>
+        <th>차량명</th>
+        <th>연도</th>
+        <th>연료</th>
+        <th>좌석 수</th>
+        <th>변속기</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${car}">
+        <td th:text="${car.carId}"></td>
+        <td th:text="${car.carManufacture}"></td>
+        <td th:text="${car.carCategory}"></td>
+        <td th:text="${car.carName}"></td>
+        <td th:text="${car.carYear}"></td>
+        <td th:text="${car.carFuel}"></td>
+        <td th:text="${car.carSeateNum}"></td>
+        <td th:text="${car.carTransmission}"></td>
+    </tr>
+    </tbody>
+    </table>
+    <br/>
+
+<!--<form th:action="@{/reservations}" th:object="${reservation}" method="post">-->
+<!--    <label for="carId">차량 ID</label>-->
+<!--    <input type="text" id="carId" th:field="*{carId}" readonly="readonly" /><br/><br/>-->
+
+<!--    <label for="reservationSStartDate">예약 시작일</label>-->
+<!--    <input type="text" id="reservationSStartDate" th:field="*{reservationSStartDate}" placeholder="예약 시작일 입력" required /><br/><br/>-->
+
+<!--    <label for="reservationSEndDate">예약 종료일</label>-->
+<!--    <input type="text" id="reservationSEndDate" th:field="*{reservationSEndDate}" placeholder="예약 종료일 입력" required /><br/><br/>-->
+
+<!--    <input type="submit" value="예약하기" />-->
+<!--</form>-->
+<br/>
+<a href="/reservations/list">목록으로 돌아가기</a>
+</body>
+</html>
