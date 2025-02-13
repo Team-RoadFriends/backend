@@ -23,15 +23,12 @@ public class ReservationService {
         return reservationMapper.findAll();
     }
 
-//    public void newReservation(ReservationDto reservation){
-//        reservationMapper.insert(reservation);
-//    }
-    public CarDto getCarById(Long id){
+    public CarDto getCarById(int id){
         return reservationMapper.findByCarId(id);
     }
 
-    public void newReservation(Long id){
-        reservationMapper.insert(id);
+    public void newReservation(ReservationDto reservation){
+        reservationMapper.insert(reservation);
     }
 
     public ReservationDto getReservationById(Long id){

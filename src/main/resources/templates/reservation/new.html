@@ -34,18 +34,18 @@
     </table>
     <br/>
 
-<!--<form th:action="@{/reservations}" th:object="${reservation}" method="post">-->
-<!--    <label for="carId">차량 ID</label>-->
-<!--    <input type="text" id="carId" th:field="*{carId}" readonly="readonly" /><br/><br/>-->
+<form th:action="@{/reservations}" th:object="${reservation}" method="post">
+    <label for="carId">차량 ID</label>
+    <input type="text" id="carId" th:field="*{carId}" readonly="readonly"/><br/><br/>
 
-<!--    <label for="reservationSStartDate">예약 시작일</label>-->
-<!--    <input type="text" id="reservationSStartDate" th:field="*{reservationSStartDate}" placeholder="예약 시작일 입력" required /><br/><br/>-->
+    <label for="reservationSStartDate">예약 시작일</label>
+    <input type="text" id="reservationSStartDate" th:field="*{reservationSStartDate}" placeholder="예약 시작일 입력" required /><br/><br/>
 
-<!--    <label for="reservationSEndDate">예약 종료일</label>-->
-<!--    <input type="text" id="reservationSEndDate" th:field="*{reservationSEndDate}" placeholder="예약 종료일 입력" required /><br/><br/>-->
+    <label for="reservationSEndDate">예약 종료일</label>
+    <input type="text" id="reservationSEndDate" th:field="*{reservationSEndDate}" placeholder="예약 종료일 입력" required /><br/><br/>
 
-<!--    <input type="submit" value="예약하기" />-->
-<!--</form>-->
+    <input type="submit" value="예약하기" />
+</form>
 <br/>
 <a href="/reservations/list">목록으로 돌아가기</a>
 </body>

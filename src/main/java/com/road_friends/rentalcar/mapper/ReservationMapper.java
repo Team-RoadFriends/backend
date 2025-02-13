@@ -11,9 +11,8 @@ public interface ReservationMapper {
     List<CarDto> findCar();
     List<ReservationDto> findAll();
     ReservationDto findById(Long id);
-    CarDto findByCarId(Long id);
-//    void insert(ReservationDto reservation);
-    void insert(Long id);
+    CarDto findByCarId(int id);
+    void insert(ReservationDto reservation);
     void update(ReservationDto reservation);
     void delete(Long id);
 }

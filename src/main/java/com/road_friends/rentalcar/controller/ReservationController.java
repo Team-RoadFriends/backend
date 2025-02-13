@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLOutput;
+
 @Controller
 @RequestMapping("/reservations")
 public class ReservationController {
@@ -43,19 +45,21 @@ public class ReservationController {
 
     //예약 추가 폼
     @GetMapping("/new/{id}")
-    public String showAddForm(@PathVariable Long id, Model model, ReservationDto reservation){
+    public String showAddForm(@PathVariable int id, Model model, ReservationDto reservation){
         CarDto car = reservationService.getCarById(id);
         if(car == null){
             return "redirect:/reservations/car_list";
         }
         model.addAttribute("car", car);
+        model.addAttribute("reservation",reservation);
+        reservation.setCarId(id); //carId reservation에 지정
         return "reservation/new";
     }
 
     //예약 추가 처리
     @PostMapping
-    public String addReservation(@PathVariable Long id,@ModelAttribute ReservationDto reservation){
-        reservationService.newReservation(id);
+    public String addReservation(Model model, @ModelAttribute ReservationDto reservation){
+        reservationService.newReservation(reservation);
         return "redirect:/reservations";
     }
 
