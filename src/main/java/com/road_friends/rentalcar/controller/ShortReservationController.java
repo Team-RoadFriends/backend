@@ -12,7 +12,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/short-rent")
-@CrossOrigin(origins = "http://localhost:3000")
 public class ShortReservationController {
 
     private final ShortReservationService shortReservationService;

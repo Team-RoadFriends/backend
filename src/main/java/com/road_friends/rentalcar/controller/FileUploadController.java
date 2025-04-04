@@ -15,7 +15,6 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/upload")
-@CrossOrigin(origins = "http://localhost:3000")
 public class FileUploadController {
   private final String uploadDir = "E:/images/notice/"; // 변경된 경로
 

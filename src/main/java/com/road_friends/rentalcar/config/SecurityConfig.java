@@ -82,6 +82,7 @@ public class SecurityConfig {
                       "http://127.0.0.1:5500",
                       "http://localhost:3000",
                       "https://roadfriends-everycar.shop",
+                      "http://ec2-15-165-203-169.ap-northeast-2.compute.amazonaws.com:3000",
                       "http://everycar-react-app.s3-website.ap-northeast-2.amazonaws.com"
               ));
               config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));

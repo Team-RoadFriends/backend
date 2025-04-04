@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/user/reviews")
-@CrossOrigin(origins = "http://localhost:3000")
 public class UserReviewController {
 
     private final UserReviewService userReviewService;

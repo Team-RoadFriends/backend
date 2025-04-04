@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/inquiry")
-@CrossOrigin(origins = "http://localhost:3000")
 public class InquiryController {
 
     @Autowired
